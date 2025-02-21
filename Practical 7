@@ -1,0 +1,27 @@
+
+
+
+
+Code:
+data <- data.frame(
+ finance = c(12,7),
+ sales = c(38,19),
+ hr = c(5,3),
+ technology = c(8,1)
+)
+result <- chisq.test(data)
+result
+if (result$p.value > 0.05) {
+ print("Null hypothesis is Accepted")
+} else {
+ print("Null hypothesis is Rejected")
+}
+
+
+
+Output:
+> result
+Pearson's Chi-squared test
+data: data
+X-squared = 2.1553, df = 3, p-value = 0.5408
+[1] "Null hypothesis is Accepted"
