@@ -1,0 +1,25 @@
+Code:
+data <- data.frame(
+ spade = 402,
+ diamond = 358,
+ club = 273,
+ heart = 467
+)
+result <- chisq.test(data)
+result
+if (result$p.value > 0.05) {
+ print("Null hypothesis is Accepted")
+} else {
+ print("Null hypothesis is Rejected")
+}
+
+
+
+
+
+Output:
+> result
+Chi-squared test for given probabilities
+data: data
+X-squared = 53.029, df = 3, p-value = 1.807e-11
+[1] "Null hypothesis is Rejected"
