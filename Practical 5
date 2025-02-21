@@ -1,0 +1,66 @@
+In excel X  f1   f2   f3
+
+Code:
+my_data<- data.frame(read.csv("C:\\Users\\prath\\Desktop\\data.csv"))
+my_data
+getmode <- function(v) {
+ uniqv <- unique(v)
+ uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+#First Pearson
+mean1<-mean(rep(my_data$x,my_data$F1))
+median1<-median(rep(my_data$x,my_data$F1))
+mode1<-getmode(rep(my_data$x,my_data$F1))
+sd1<-sd(rep(my_data$x,my_data$F1))
+Pearsonfirst1<-((mean1-mode1)/sd1)
+Pearsonsecond1<-(3*(mean1-median1)/sd1)
+print("Pearson first coefficient of skewness with x and f1 is:")
+print(Pearsonfirst1)
+print("Pearson Second coefficient of skewness with x and f1 is:")
+print(Pearsonsecond1)
+#Second Pearson
+mean2<-mean(rep(my_data$x,my_data$F2))
+median2<-median(rep(my_data$x,my_data$F2))
+mode2<-getmode(rep(my_data$x,my_data$F2))
+sd2<-sd(rep(my_data$x,my_data$F2))
+Pearsonfirst2<-((mean2-mode2)/sd1)
+Pearsonsecond2<-(3*(mean2-median2)/sd2)
+print("Pearson first coefficient of skewness with x and f2 is:")
+print(Pearsonfirst2)
+print("Pearson Second coefficient of skewness with x and f2 is:")
+print(Pearsonsecond2)
+#Third Pearson
+mean3<-mean(rep(my_data$x,my_data$F3))
+median3<-median(rep(my_data$x,my_data$F3))
+mode3<-getmode(rep(my_data$x,my_data$F3))
+sd3<-sd(rep(my_data$x,my_data$F3))
+Pearsonfirst3<-((mean3-mode3)/sd3)
+Pearsonsecond3<-(3*(mean3-median3)/sd3)
+print("Pearson first coefficient of skewness with x and f3 is:")
+print(Pearsonfirst3)
+print("Pearson Second coefficient of skewness with x and f3 is:")
+print(Pearsonsecond3)
+
+
+
+
+Output:
+> my_data
+ x F1 F2 F3
+1 0 10 1 1
+2 1 5 2 2
+3 2 2 14 5
+4 3 2 2 5
+5 4 1 1 10
+[1] "Pearson first coefficient of skewness with x and f1 is:"
+[1] 0.7696196
+[1] "Pearson Second coefficient of skewness with x and f1 is:"
+[1] 1.09367
+[1] "Pearson first coefficient of skewness with x and f2 is:"
+[1] 0
+[1] "Pearson Second coefficient of skewness with x and f2 is:"
+[1] 0
+[1] "Pearson first coefficient of skewness with x and f3 is:"
+[1] -0.9037158
+[1] "Pearson Second coefficient of skewness with x and f3 is:"
+[1] -0.2168918
